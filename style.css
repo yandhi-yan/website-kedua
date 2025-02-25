@@ -1,0 +1,256 @@
+/* Pastikan semua elemen menggunakan box-sizing: border-box */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Mencegah overflow horizontal */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.ungu {
+    background-color: #555;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    gap: 20px;
+}
+
+.section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.section p {
+    line-height: 1.6;
+}
+
+/* Style untuk Section Kontak */
+.section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Jarak antar section */
+}
+
+.contact {
+    text-align: center; /* Pusatkan konten */
+}
+
+.contact h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact .img {
+    display: inline-block;
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.contact .img img {
+    width: 25px; /* Ukuran logo WhatsApp */
+    height: auto;
+    vertical-align: middle; /* Sejajarkan ikon dengan teks */
+}
+
+.contact a {
+    display: inline-flex; /* Menggunakan Flexbox untuk penyejajaran */
+    align-items: center; /* Pusatkan vertikal */
+    background-color: #25d366; /* Warna hijau WhatsApp */
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efek hover */
+}
+
+.contact a:hover {
+    background-color: #128c7e; /* Warna hijau lebih gelap saat dihover */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .contact h2 {
+        font-size: 20px; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .contact .img img {
+        width: 25px; /* Ukuran logo lebih kecil di mobile */
+    }
+    
+    .contact {
+      text-align: center;
+      padding: 5px 10px;
+    }
+
+    .contact a {
+        padding: 8px 16px; /* Padding lebih kecil di mobile */
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .contact h2 {
+        font-size: 20px; /* Ukuran font lebih kecil di mobile */
+    }
+
+    .contact .img img {
+        width: 25px; /* Ukuran logo lebih kecil di mobile */
+    }
+
+    .contact a {
+        padding: 8px 16px; /* Padding lebih kecil di mobile */
+        font-size: 14px;
+    }
+}
+
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Jarak antar item */
+    padding: 20px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.gallery-item p {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, .gallery {
+        padding: 10px; /* Mengurangi padding untuk menghemat ruang */
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Satu kolom untuk tampilan mobile kecil */
+        gap: 10px; /* Mengurangi jarak antar item */
+    }
+
+    .gallery-item {
+        margin: 0; /* Menghapus margin yang tidak diperlukan */
+    }
+
+    header, footer {
+        padding: 10px; /* Mengurangi padding untuk header dan footer */
+    }
+
+    nav ul {
+        padding: 0; /* Menghapus padding tambahan */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Mengurangi margin untuk item navigasi */
+    }
+}
